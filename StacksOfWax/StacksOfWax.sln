@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StacksOfWax.Models", "StacksOfWax.Models\StacksOfWax.Models.csproj", "{435C1966-8DBE-42D0-A0E8-B05B6A706281}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6209253A-55F4-429F-9C93-06D311BD87B8}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StacksOfWax.DataAccess", "StacksOfWax.DataAccess\StacksOfWax.DataAccess.csproj", "{1D495E1B-98EC-40E0-9720-181BA3CEF7BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StacksOfWax.DataAccess.Tests", "StacksOfWax.DataAccess.Tests\StacksOfWax.DataAccess.Tests.csproj", "{2824AEC8-BE08-4693-84CB-3FCB36501B12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{435C1966-8DBE-42D0-A0E8-B05B6A706281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435C1966-8DBE-42D0-A0E8-B05B6A706281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435C1966-8DBE-42D0-A0E8-B05B6A706281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435C1966-8DBE-42D0-A0E8-B05B6A706281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D495E1B-98EC-40E0-9720-181BA3CEF7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D495E1B-98EC-40E0-9720-181BA3CEF7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D495E1B-98EC-40E0-9720-181BA3CEF7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D495E1B-98EC-40E0-9720-181BA3CEF7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2824AEC8-BE08-4693-84CB-3FCB36501B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2824AEC8-BE08-4693-84CB-3FCB36501B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2824AEC8-BE08-4693-84CB-3FCB36501B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2824AEC8-BE08-4693-84CB-3FCB36501B12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
