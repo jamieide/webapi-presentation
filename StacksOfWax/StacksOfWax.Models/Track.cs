@@ -13,7 +13,7 @@ namespace StacksOfWax.Models
             Name = name;
         }
 
-        public int TrackId { get; set; }
+        public int TrackId { get; private set; }
         
         [Required]
         public string Name { get; set; }

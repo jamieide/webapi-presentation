@@ -7,12 +7,13 @@ namespace StacksOfWax.Models
     public class Artist
     {
         protected Artist()
-        {}
+        {
+            Albums = new Collection<Album>();
+        }
 
-        public Artist(string name)
+        public Artist(string name) : this()
         {
             Name = name;
-            Albums = new Collection<Album>();
         }
 
         public int ArtistId { get; private set; }

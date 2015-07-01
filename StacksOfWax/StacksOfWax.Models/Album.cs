@@ -7,15 +7,16 @@ namespace StacksOfWax.Models
     public class Album
     {
         protected Album()
-        {}
-
-        public Album(string name)
-        {
-            Name = name;
+        {            
             Tracks = new Collection<Track>();
         }
 
-        public int AlbumId { get; set; }
+        public Album(string name) : this()
+        {
+            Name = name;
+        }
+
+        public int AlbumId { get; private set; }
 
         [Required]
         public string Name { get; set; }
