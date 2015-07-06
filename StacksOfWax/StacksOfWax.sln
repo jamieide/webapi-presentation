@@ -24,6 +24,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleApi", "SimpleApi", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StacksOfWax.SimpleApi.Tests", "StacksOfWax.SimpleApi.Tests\StacksOfWax.SimpleApi.Tests.csproj", "{EC265970-BB78-47DF-A3F8-B0B51BC0F392}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OwinApi", "OwinApi", "{B91644A9-24CA-4BC0-9590-A87169F10754}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StacksOfWax.OwinApi", "StacksOfWax.OwinApi\StacksOfWax.OwinApi.csproj", "{5CA0DDCA-DA4A-4CE5-9793-8CE9D71C4039}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StacksOfWax.OwinApi.Tests", "StacksOfWax.OwinApi.Tests\StacksOfWax.OwinApi.Tests.csproj", "{C0F65328-5661-48D8-931B-ACDDD763AC5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +60,14 @@ Global
 		{EC265970-BB78-47DF-A3F8-B0B51BC0F392}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC265970-BB78-47DF-A3F8-B0B51BC0F392}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC265970-BB78-47DF-A3F8-B0B51BC0F392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA0DDCA-DA4A-4CE5-9793-8CE9D71C4039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA0DDCA-DA4A-4CE5-9793-8CE9D71C4039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA0DDCA-DA4A-4CE5-9793-8CE9D71C4039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA0DDCA-DA4A-4CE5-9793-8CE9D71C4039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F65328-5661-48D8-931B-ACDDD763AC5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F65328-5661-48D8-931B-ACDDD763AC5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F65328-5661-48D8-931B-ACDDD763AC5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F65328-5661-48D8-931B-ACDDD763AC5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,5 +75,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CEDA7E65-90F6-4B06-9BEF-926F82A95B1A} = {DD869F84-3D08-493F-A85B-E17CCB7649DE}
 		{EC265970-BB78-47DF-A3F8-B0B51BC0F392} = {DD869F84-3D08-493F-A85B-E17CCB7649DE}
+		{5CA0DDCA-DA4A-4CE5-9793-8CE9D71C4039} = {B91644A9-24CA-4BC0-9590-A87169F10754}
+		{C0F65328-5661-48D8-931B-ACDDD763AC5A} = {B91644A9-24CA-4BC0-9590-A87169F10754}
 	EndGlobalSection
 EndGlobal
