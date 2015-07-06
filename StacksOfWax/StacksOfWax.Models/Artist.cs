@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 
 namespace StacksOfWax.Models
 {
+    [DataContract]
     public class Artist
     {
         protected Artist()
@@ -16,8 +18,10 @@ namespace StacksOfWax.Models
             Name = name;
         }
 
+        [DataMember]
         public int ArtistId { get; private set; }
 
+        [DataMember]
         [Required]
         public string Name { get; set; }
 

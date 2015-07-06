@@ -54,5 +54,18 @@ namespace StacksOfWax.OwinApi.Tests
             Assert.IsNotNull(artists);
             Assert.IsTrue(artists.Any());
         }
+
+        [TestMethod]
+        public void CanGetArtist()
+        {
+            // Act
+            var response = _server.HttpClient.GetAsync("api/artists/1").Result;
+            response.EnsureSuccessStatusCode();
+            var artist = response.Content.ReadAsAsync<Artist>().Result;
+
+            // Assert
+            Assert.IsNotNull(artist);
+            Assert.AreEqual(1, artist.ArtistId);
+        }
     }
 }

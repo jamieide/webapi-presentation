@@ -11,6 +11,7 @@ namespace StacksOfWax.OwinApi.Tests
 {
     /// <summary>
     /// These unit tests demonstrate self-hosting an OWIN enabled Web API. However, for unit testing purposes, in-memory hosting is recommended.
+    /// I am unable to set a breakpoint using self-hosting.
     /// </summary>
     [TestClass]
     public class ArtistsControllerSelfHostTests
