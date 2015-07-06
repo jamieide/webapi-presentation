@@ -10,9 +10,12 @@ namespace StacksOfWax.SimpleApi.Controllers
     {
         private readonly StacksOfWaxDbContext _db;
 
-        public ArtistsController()
+        public ArtistsController() : this(new StacksOfWaxDbContext())
+        {}
+
+        public ArtistsController(StacksOfWaxDbContext db)
         {
-            _db = new StacksOfWaxDbContext();
+            _db = db;
         }
 
         // GET api/artists
