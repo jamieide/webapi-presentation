@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Description;
 using StacksOfWax.DataAccess;
 using StacksOfWax.Models;
 
@@ -8,22 +8,26 @@ namespace StacksOfWax.SimpleApi.Controllers
 {
     public class ArtistsController : ApiController
     {
-        private readonly StacksOfWaxDbContext _dbContext;
+        private readonly StacksOfWaxDbContext _db;
 
         public ArtistsController()
         {
-            _dbContext = new StacksOfWaxDbContext();
+            _db = new StacksOfWaxDbContext();
         }
 
-        public IHttpActionResult Get()
+        // GET api/artists
+        // Return all Artists.
+        public IHttpActionResult GetArtists()
         {
-            var artists = _dbContext.Artists.ToList();
+            var artists = _db.Artists.ToList();
             return Ok(artists);
         }
 
-        public IHttpActionResult Get(int id)
+        // GET api/artists/1
+        [ResponseType(typeof(Album))]
+        public IHttpActionResult GetArtist(int id)
         {
-            var artist = _dbContext.Artists.SingleOrDefault(x => x.ArtistId == id);
+            var artist = _db.Artists.SingleOrDefault(x => x.ArtistId == id);
             if (artist == null)
             {
                 return NotFound();
@@ -31,26 +35,59 @@ namespace StacksOfWax.SimpleApi.Controllers
             return Ok(artist);
         }
 
-        public IHttpActionResult Post(Artist artist)
+        // api/artists/1
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutArtist(int id, Artist artist)
         {
-            _dbContext.Artists.Add(artist);
-            _dbContext.SaveChanges();
-            return CreatedAtRoute("DefaultApi", new {id = artist.ArtistId}, artist);
-        }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        public IHttpActionResult Put(int id, [FromBody]Artist artist)
-        {
             // private setter on ArtistId so it is not bound
-            var existingArtist = _dbContext.Artists.SingleOrDefault(x => x.ArtistId == id);
+            var existingArtist = _db.Artists.SingleOrDefault(x => x.ArtistId == id);
             if (existingArtist == null)
             {
                 return NotFound();
             }
 
+            // TODO Handle DbUpdateConcurrencyException
             existingArtist.Name = artist.Name;
-            _dbContext.SaveChanges();
+            _db.SaveChanges();
 
-            return Ok(existingArtist);
+            return Ok(artist);
+        }
+
+        // POST api/artists
+        [ResponseType(typeof(Artist))]
+        public IHttpActionResult PostArtist(Artist artist)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _db.Artists.Add(artist);
+            _db.SaveChanges();
+            
+            return CreatedAtRoute("DefaultApi", new {id = artist.ArtistId}, artist);
+        }
+
+
+        // api/artists/1
+        [ResponseType(typeof(Artist))]
+        public IHttpActionResult DeleteArtist(int id)
+        {
+            var artist = _db.Artists.SingleOrDefault(x => x.ArtistId == id);
+            if (artist == null)
+            {
+                return NotFound();
+            }
+
+            _db.Artists.Remove(artist);
+            _db.SaveChanges();
+
+            return Ok(artist);
         }
     }
 }
